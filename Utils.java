@@ -1,16 +1,30 @@
-public class Utils {
-    public  static int[] getNumbers() {
-        int[] arr = {1,2,3};
-        return arr;
+package de.telran.lesson22.practice3;
 
+import java.util.Scanner;
+
+public class Utils {
+    public static int[] getUserLotteryNumbers() {
+        Scanner scanner = new Scanner(System.in);
+        int[] userNumbers = new int[Constants.COUNT_SET_SIZE];
+        for(int i = 0; i < Constants.COUNT_SET_SIZE; i++) {
+            do {
+                System.out.print("Введите "+(i+1)+"-й номер = ");
+                userNumbers[i] = scanner.nextInt();
+            } while(userNumbers[i] <= 0 || userNumbers[i] > 50);
+        }
+        return userNumbers;
     }
-    public static int findMax(int[] arr){
-         if(arr==null || arr.length==0)
-                 return 0;
-         int max = Integer.MIN_VALUE;
-         for(int val : arr) {
-             if(val > max) max = val;
-         }
-         return max;
+
+    public static int compareWinnerNumbers(int[] lotteryNumbers, int[] userNumbers) {
+        int count = 0;
+        for(int valUser : userNumbers) {
+            for(int valLottery: lotteryNumbers) {
+                if(valUser == valLottery) {
+                    count++;
+                    break;
+                }
+            }
+        }
+        return count;
     }
 }
