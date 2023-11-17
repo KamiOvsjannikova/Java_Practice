@@ -1,6 +1,6 @@
 package LessonQA171123;
 
-public class MyLinkedList { // svjazannij spisok- eto nabor 1-ogo i togo ze tipa, kotorij ssilaetsja na drugie elemnti
+public class MyLinkedList { // svjazannij spisok- eto nabor 1-ogo i togo ze tipa, kotorij ssilaetsja na drugie elemnti. MyLinkedList - dvustoronnej spisok emplimentiruet
     private Node head;
 
     //Time complexity 0(1)
