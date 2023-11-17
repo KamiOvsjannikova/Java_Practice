@@ -8,7 +8,7 @@ public class Node {
 
     public Node(Integer data, Node next) {
         this.data = data;
-        this.next = next;
+        this.next = next; // next ssilaetsja na sled.element
     }
 
     public Integer getData() {
